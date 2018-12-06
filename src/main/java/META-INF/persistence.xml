@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="gestionbanque_pu" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Réference de la source de données intégrée dans le serveur d'aplication -->
+		<jta-data-source>java:jboss/BanqueJaasDS</jta-data-source>
+
+
+		<class>sn.objis.gestionbanque.domaine.Compte</class>
+		<class>sn.objis.gestionbanque.domaine.CompteCourant</class>
+		<class>sn.objis.gestionbanque.domaine.CompteEpargne</class>
+		<class>sn.objis.gestionbanque.domaine.Client</class>
+		<class>sn.objis.gestionbanque.domaine.Operation</class>
+		<class>sn.objis.gestionbanque.domaine.Retrait</class>
+		<class>sn.objis.gestionbanque.domaine.Versement</class>
+		<class>sn.objis.gestionbanque.domaine.Employe</class>
+		<class>sn.objis.gestionbanque.domaine.Groupe</class>
+		<class>sn.objis.gestionbanque.domaine.CompteUser</class>
+		<class>sn.objis.gestionbanque.domaine.Roles</class>
+		<class>sn.objis.gestionbanque.domaine.Virement</class>
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+<!-- 			<property name="hibernate.transaction.jta.platform" -->
+<!-- 				value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"  /> -->
+		</properties>
+	</persistence-unit>
+</persistence>
